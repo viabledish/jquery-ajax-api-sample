@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Instagram API Test</title>
+	<link rel="stylesheet" type="text/css" href="scripts/sample.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+	<link rel="stylesheet" href="css/bootstrap-image-gallery.css">
+
+</head>
+<body>
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+	<div class="container starter-template">	
+	<h1>Instagram API Test</h1>
+    </form>
+    <br>
+    <!-- The container for the list of example images -->
+    <div id="links"></div>
+    <br>
+	</div>
+	
+	<script src="scripts/jquery-1.10.2.min.js"></script>
+	<script src="scripts/bootstrap.min.js"></script>
+	<script src="scripts/jquery.blueimp-gallery.min.js"></script>
+	<script type="text/javascript" src="scripts/instafeed.min.js"></script>
+	<script type="text/javascript">
+
+		$.getJSON('https://api.instagram.com/v1/tags/apple/media/recent?access_token=29685244.f59def8.8ea4a50359c34b1baf288d94fc2ac76a&callback=?',
+
+		function (data) {
+		    var pictures = data.data;
+		    for (var i = 0; i < pictures.length; i++) {
+		        var picture = pictures[i];
+		        var a = $('<a />').attr('href', pictures[i].link);
+		        var imageSrc = pictures[i].images.thumbnail.url;
+		        var img = $('<img />').attr('src', imageSrc);
+		        a.append(img);
+		        $('#links').append(a);
+
+		    }});
+  
+	</script>
+</body>
+</html>
+
