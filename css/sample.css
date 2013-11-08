@@ -1,84 +1,67 @@
-.view {
-    width: 300px;
-    height: 200px;
-    margin: 10px;
-    float: left;
-    border: 10px solid #fff;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    box-shadow: 1px 1px 2px #e6e6e6;
-    cursor: default;
-    background: #fff url(../images/bgimg.jpg) no-repeat center center
+img {display: block;}
+
+figure.cap-bot { 
+  display: block; 
+  position: relative; 
+  float: left; 
+  overflow: hidden; 
+  margin: 0 20px 20px 0;
+
 }
-.view .mask, .view .content {
-    width: 300px;
-    height: 200px;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: 0
+/*
+position: absolute;
+background: rgba(0,0,0,.75);
+color: white;
+padding: 10px 20px;
+-webkit-transition: all 0.6s;
+*/
+
+figcaption.cap-bot { 
+  position: absolute; 
+  background: rgba(0,0,0,0.75); 
+  color: white; 
+  padding: 10px 20px; 
+  -webkit-transition: all 0.6s ease;
+  -moz-transition:    all 0.6s ease;
+  -o-transition:      all 0.6s ease;
 }
-.view img {
-    display: block;
-    position: relative
+figure.cap-bot:hover figcaption.cap-bot:hover {
+  opacity: 1;
 }
-.view h2 {
-    text-transform: uppercase;
-    color: #fff;
-    text-align: center;
-    position: relative;
-    font-size: 17px;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
-    margin: 20px 0 0 0
+figure.cap-bot:before { 
+  content: ""; 
+  position: absolute; 
+  font-weight: 800; 
+  background: rgba(255,255,255,0.75); 
+  text-shadow: 0 0 5px white;
+  color: black;
+  width: 24px;
+  height: 24px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius:    12px;
+  border-radius:         12px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 24px;
+  -moz-transition: all 0.6s ease;
+  opacity: 0.75;	
 }
-.view p {
-    font-family: Georgia, serif;
-    font-style: italic;
-    font-size: 12px;
-    position: relative;
-    color: #fff;
-    padding: 10px 20px 20px;
-    text-align: center
-}
-.view a.info {
-    display: inline-block;
-    text-decoration: none;
-    padding: 7px 14px;
-    background: #000;
-    color: #fff;
-    text-transform: uppercase;
-    box-shadow: 0 0 1px #000
-}
-.view a.info:hover {
-    box-shadow: 0 0 5px #000
+figure.cap-bot:hover:before {
+  opacity: 0;
 }
 
-.view-second img {  
-    transition: all 0.2s ease-in;
-}
-.view-second .mask { 
-    background-color: rgba(115,146,184, 0.7); 
-    width: 300px;
-    padding: 60px;
-    height: 300px;
-    opacity: 0;
-    transform: translate(265px, 145px) rotate(45deg);
-    transition: all 0.2s ease-in-out;
-}
-.view-second h2 {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    background: transparent;
-    margin: 20px 40px 0px 40px;
-    transform: translate(200px, -200px);
-    transition: all 0.2s ease-in-out;
-}
-.view-second p { 
-    transform: translate(-200px, 200px);
-    transition: all 0.2s ease-in-out;
-}
-.view-second a.info { 
-    transform: translate(0px, 100px);
-    transition: all 0.2s 0.1s ease-in-out;
-} 
+.cap-left:before {  bottom: 10px; left: 10px; }
+.cap-left figcaption { bottom: 0; left: -30%; }
+.cap-left:hover figcaption { left: 0; }
+
+.cap-right:before { bottom: 10px; right: 10px; }
+.cap-right figcaption { bottom: 0; right: -30%; }
+.cap-right:hover figcaption { right: 0; }
+
+.cap-top:before { top: 10px; left: 10px; }
+.cap-top figcaption { left: 0; top: -30%; }
+.cap-top:hover figcaption { top: 0; }
+
+.cap-bot:before { bottom: 10px; left: 10px; }
+.cap-bot figcaption { left: 0; bottom: -30%;}
+.cap-bot:hover figcaption { bottom: 0; }
